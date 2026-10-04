@@ -58,7 +58,7 @@ app.get('/meme.gif', (req, res))
 });
 
 // Admin Dashboard (View Logs)
-app.get('/admin', (req, res) {
+app.get('/admin', (req, res)) {
     if (visitorLogs.length === 0) {
         return res.send('No logs yet. Send the link to someone!');
     }
@@ -82,7 +82,7 @@ app.get('/admin', (req, res) {
     // Show last 50 logs in reverse order (newest first)
     const recentLogs = [...visitorLogs].reverse().slice(0, 50);
     
-    recentLogs.forEach(log => {
+    recentLogs.forEach(log) => {
         html += `
         <div class="log-entry">
             <div><span class="label">Time:</span> ${log.timestamp}</div>
