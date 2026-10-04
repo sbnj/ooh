@@ -30,7 +30,7 @@ function getClientInfo(req) {
 }
 
 // Main Tracking Endpoint
-app.get('/meme.gif', (req, res)) {
+app.get('/meme.gif', (req, res)) 
     const data = getClientInfo(req);
     
     // Log to console (visible in Render Dashboard)
