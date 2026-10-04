@@ -45,13 +45,13 @@ app.get('/meme.gif', (req, res))
     }
 
     // Proxy the GIF
-    https.get(TARGET_GIF, (gifRes) => {
+    https.get(TARGET_GIF, (gifRes)) => {
         res.setHeader('Content-Type', 'image/gif');
         res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
         res.setHeader('Pragma', 'no-cache');
         res.setHeader('Expires', '0');
         gifRes.pipe(res);
-    }).on('error', (err) {
+    }).on('error', (err)) {
         console.error('GIF Fetch Error:', err);
         res.status(500).send('Error fetching image');
     });
